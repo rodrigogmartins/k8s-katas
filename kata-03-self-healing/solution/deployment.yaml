@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: unstable-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: unstable
+  template:
+    metadata:
+      labels:
+        app: unstable
+    spec:
+      containers:
+        - name: app
+          image: registry.k8s.io/e2e-test-images/agnhost:2.45
+          args:
+            - netexec
+            - --http-port=8080
+          ports:
+            - containerPort: 8080
+
+          # Defines when the Pod is ready to receive traffic
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: 8080
+            initialDelaySeconds: 2
+            periodSeconds: 5
+            failureThreshold: 3
+
+          # Defines when the Pod should be restarted
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            failureThreshold: 3
