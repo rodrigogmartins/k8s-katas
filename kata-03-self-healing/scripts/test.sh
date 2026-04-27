@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SERVICE_URL=${1:-http://unstable-service}
+SERVICE_URL=${1:-http://localhost:30080}
 
 echo "Starting chaos + observability test on $SERVICE_URL"
 echo "Press Ctrl+C to stop"
