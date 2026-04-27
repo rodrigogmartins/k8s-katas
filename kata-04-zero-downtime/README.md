@@ -111,7 +111,7 @@ kubectl get endpoints
 ### 1. Inicie o tráfego contínuo
 
 ```bash
-./scripts/test.sh http://localhost:30080
+./scripts/test.sh
 ```
 
 ### 2. Dispare um update

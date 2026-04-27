@@ -64,19 +64,6 @@ Você vai aprender mais quando:
 
 ---
 
-## 🗺️ Estrutura dos Katas
-
-Cada kata simula um problema real:
-
-| Kata    | Tema                                              |
-| ------- | ------------------------------------------------- |
-| Kata 01 | Deploy e exposição básica                         |
-| Kata 02 | Comunicação interna (ClusterIP vs NodePort)       |
-| Kata 03 | Self-healing e health checks                      |
-| Kata 04 | Zero downtime e rolling updates *(em construção)* |
-
----
-
 ## 🚀 Como usar
 
 Cada kata segue a mesma estrutura:
